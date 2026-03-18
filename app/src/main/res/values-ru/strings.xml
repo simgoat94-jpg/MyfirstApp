@@ -3,4 +3,9 @@
     <string name="app_name">MyFirstApp</string>
     <string name="main_text">Мое первое приложение</string>
     <string name="student_info">Керьяков\n3.2ИСИП-1</string>
+    <string name="avatar_description">Аватар автора</string>
+    <string name="menu_description">Меню описание</string>
+    <string name="like_description">как описание</string>
+    <string name="share_description">общее описание</string>
+    <string name="views_description">описание видов</string>
 </resources>
