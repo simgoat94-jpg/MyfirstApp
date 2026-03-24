@@ -1,4 +1,4 @@
-package dto
+package ru.keryakov.myfirstapp.dto
 
 data class Post (
     val id: Long,
