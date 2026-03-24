@@ -6,13 +6,15 @@ import ru.keryakov.myfirstapp.dto.Post
 import ru.keryakov.myfirstapp.repository.PostRepository
 import ru.keryakov.myfirstapp.repository.PostRepositoryInMemoryImpl
 
-class PostViewModel {
+class PostViewModel : ViewModel() {
     private val repository: PostRepository = PostRepositoryInMemoryImpl()
 
-    val data: LiveData<Post> = repository.get()
+    val data: LiveData<List<Post>> = repository.getAll()
 
-    fun like() = repository.like()
-    fun share() = repository.share()
-    fun increaseViews() = repository.increaseViews()
+    fun likeById(id: Long) = repository.likeById(id)
+
+    fun shareById(id: Long) = repository.shareById(id)
+
+    fun increaseViews(id: Long) = repository.increaseViews(id)
 
 }

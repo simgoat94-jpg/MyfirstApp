@@ -1,32 +1,27 @@
-package util
+package ru.keryakov.myfirstapp.util
 
 import java.text.DecimalFormat
 
-class FormatUtils {
-    private fun formatCount(count: Int): String {
+object FormatUtils {
+    fun formatCount(count: Int): String {
         return when {
             count >= 1_000_000 -> {
                 val millions = count / 1_000_000.0
-                if (millions % 1.0 == 0.0) {
+                if (millions % 1.0 == 0.0)
                     "${millions.toInt()}M"
-                } else {
+                else
                     DecimalFormat(".").format(millions) + "M"
-                }
             }
-
             count >= 10_000 -> {
                 "${count / 1000}K"
             }
-
             count >= 1_000 -> {
                 val thousands = count / 1000.0
-                if (thousands % 1.0 == 0.0) {
+                if (thousands % 1.0 == 0.0)
                     "${thousands.toInt()}K"
-                } else {
+                else
                     DecimalFormat(".").format(thousands) + "K"
-                }
             }
-
             else -> count.toString()
         }
     }
